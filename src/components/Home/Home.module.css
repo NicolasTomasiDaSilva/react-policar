@@ -1,11 +1,39 @@
 .home {
+  user-select: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 50px;
+  padding: clamp(1rem, 3vw, 3rem) clamp(1rem, 3vw, 3rem);
   background-image: url("./../../assets/banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.home > h2 {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.home > a {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: white;
+  font-weight: 900;
+  padding: 1rem 1rem;
+  background-color: #25d366;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-decoration: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+.home > a:hover {
+  transform: scale(0.95);
 }
