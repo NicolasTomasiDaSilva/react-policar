@@ -4,10 +4,20 @@ import { Scrollbars } from "react-custom-scrollbars";
 import Header from "./components/Header/Header.tsx";
 import Home from "./components/Home/Home.tsx";
 import About from "./components/About/About.tsx";
-import React, { useState } from "react";
+import Services from "./components/Services/Services.tsx";
+import React, { useState, useRef } from "react";
 
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const homeRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const handleScroll = (values: any) => {
     values.scrollTop > 50 ? setScrolled(true) : setScrolled(false);
@@ -22,9 +32,16 @@ function App() {
         autoHideDuration={200} // Tempo em milissegundos para a transição de desaparecimento
         onScrollFrame={handleScroll}
       >
-        <Header scrolled={scrolled} />
-        <Home />
-        <About />
+        <Header
+          scrolled={scrolled}
+          homeRef={homeRef}
+          aboutRef={aboutRef}
+          servicesRef={servicesRef}
+          scrollToSection={scrollToSection}
+        />
+        <Home homeRef={homeRef} />
+        <About aboutRef={aboutRef} />
+        <Services servicesRef={servicesRef} />
       </Scrollbars>
     </div>
   );

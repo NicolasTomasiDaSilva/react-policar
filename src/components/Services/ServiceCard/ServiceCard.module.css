@@ -1,0 +1,20 @@
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 7rem;
+  height: 7rem;
+  padding: 0 0 0 0.5rem;
+  border-left: 0.2rem solid white;
+}
+.icon {
+  width: 3rem;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 1rem;
+}

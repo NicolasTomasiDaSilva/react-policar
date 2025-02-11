@@ -1,8 +1,50 @@
 .about {
+  user-select: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-size: 50px;
-  background-color: red;
+  min-height: 50vh;
+  padding: 10rem 1rem 10rem 1rem;
+}
+
+section > h2 {
+  color: black;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.content {
+  margin-top: 5rem;
+
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  max-width: 25rem;
+  text-align: center;
+  color: black;
+  font-size: clamp(2rem, 5vw, 2rem);
+}
+
+.image {
+  width: clamp(15rem, 50vw, 20rem);
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
+  .image {
+    width: clamp(15rem, 50vw, 25rem);
+  }
+  .text {
+    max-width: 25rem;
+    text-align: start;
+    color: black;
+    font-size: clamp(2rem, 5vw, 2rem);
+  }
 }

@@ -5,9 +5,19 @@ import React, { useState, useEffect } from "react";
 
 interface HeaderProps {
   scrolled: boolean;
+  homeRef: React.RefObject<HTMLDivElement | null>;
+  aboutRef: React.RefObject<HTMLDivElement | null>;
+  servicesRef: React.RefObject<HTMLDivElement | null>;
+  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
 }
 
-function Header({ scrolled }: HeaderProps) {
+function Header({
+  scrolled,
+  homeRef,
+  aboutRef,
+  servicesRef,
+  scrollToSection,
+}: HeaderProps) {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -21,13 +31,34 @@ function Header({ scrolled }: HeaderProps) {
           >
             <ul>
               <li>
-                <a href="#">Inicio</a>
+                <a
+                  onClick={() => {
+                    setOpen(false);
+                    scrollToSection(homeRef as any);
+                  }}
+                >
+                  Inicio
+                </a>
               </li>
               <li>
-                <a href="#">Sobre</a>
+                <a
+                  onClick={() => {
+                    setOpen(false);
+                    scrollToSection(aboutRef as any);
+                  }}
+                >
+                  Sobre
+                </a>
               </li>
               <li>
-                <a href="#">Contato</a>
+                <a
+                  onClick={() => {
+                    setOpen(false);
+                    scrollToSection(servicesRef as any);
+                  }}
+                >
+                  Services
+                </a>
               </li>
             </ul>
           </nav>
@@ -37,13 +68,13 @@ function Header({ scrolled }: HeaderProps) {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <a href="#">Inicio</a>
+            <a onClick={() => scrollToSection(homeRef as any)}>Inicio</a>
           </li>
           <li>
-            <a href="#">Sobre</a>
+            <a onClick={() => scrollToSection(aboutRef as any)}>Sobre</a>
           </li>
           <li>
-            <a href="#">Contato</a>
+            <a onClick={() => scrollToSection(servicesRef as any)}>Services</a>
           </li>
         </ul>
       </nav>
