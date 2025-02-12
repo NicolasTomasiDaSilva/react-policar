@@ -1,0 +1,31 @@
+.reviewCard {
+  max-width: 20rem;
+  height: 2rem;
+  height: max-content;
+  border-radius: 10px;
+  background-color: rgb(221, 221, 221);
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 3rem;
+}
+.name {
+  font-weight: 900;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+}
+
+@media screen and (min-width: 768px) {
+  .reviewCard {
+    max-width: 30rem;
+  }
+}
