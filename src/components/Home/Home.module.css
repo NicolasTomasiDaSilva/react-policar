@@ -6,7 +6,7 @@
   align-items: center;
   height: 100vh;
   padding: clamp(1rem, 3vw, 3rem) clamp(1rem, 3vw, 3rem);
-  background-image: url("./banner.png");
+  background-image: url("./../../assets/banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
