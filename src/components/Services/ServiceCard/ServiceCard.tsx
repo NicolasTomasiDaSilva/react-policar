@@ -8,7 +8,7 @@ interface ServiceCardProps {
 function ServiceCard({ src, content }: ServiceCardProps) {
   return (
     <div className={styles.serviceCard}>
-      <img className={styles.icon} src={src} alt={content} />
+      <img className={styles.icon} src={src} alt={content} draggable="false" />
       <p className={styles.title}>{content}</p>
     </div>
   );

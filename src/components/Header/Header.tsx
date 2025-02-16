@@ -29,7 +29,12 @@ function Header({
 
   return (
     <header className={styles.header + " " + (scrolled ? styles.scrolled : "")}>
-      <img className={styles.logo} src="./src/assets/logo.png" alt="Policar" />
+      <img
+        className={styles.logo}
+        src="./src/assets/logo.png"
+        alt="Policar"
+        draggable="false"
+      />
       <div className={styles.hamburger}>
         <Hamburger size={25} color="white" toggled={open} toggle={setOpen} />
         {

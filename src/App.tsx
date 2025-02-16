@@ -7,6 +7,7 @@ import About from "./components/About/About.tsx";
 import Services from "./components/Services/Services.tsx";
 import React, { useState, useRef } from "react";
 import Contact from "./components/Contact/Contact.tsx";
+import Footer from "./components/Footer/Footer.tsx";
 
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -62,6 +63,7 @@ function App() {
         <About aboutRef={aboutRef} />
         <Services servicesRef={servicesRef} />
         <Contact contactRef={contactRef} />
+        <Footer />
       </Scrollbars>
     </div>
   );
