@@ -6,12 +6,33 @@ import Home from "./components/Home/Home.tsx";
 import About from "./components/About/About.tsx";
 import Services from "./components/Services/Services.tsx";
 import React, { useState, useRef } from "react";
+import Contact from "./components/Contact/Contact.tsx";
 
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const homeRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const servicesRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
+
+  const sections = {
+    home: {
+      title: "Início",
+      ref: homeRef,
+    },
+    about: {
+      title: "Sobre",
+      ref: aboutRef,
+    },
+    services: {
+      title: "Serviços",
+      ref: servicesRef,
+    },
+    contact: {
+      title: "Contato",
+      ref: contactRef,
+    },
+  };
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
@@ -34,14 +55,13 @@ function App() {
       >
         <Header
           scrolled={scrolled}
-          homeRef={homeRef}
-          aboutRef={aboutRef}
-          servicesRef={servicesRef}
           scrollToSection={scrollToSection}
+          sections={sections}
         />
         <Home homeRef={homeRef} />
         <About aboutRef={aboutRef} />
         <Services servicesRef={servicesRef} />
+        <Contact contactRef={contactRef} />
       </Scrollbars>
     </div>
   );

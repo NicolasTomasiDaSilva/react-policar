@@ -1,4 +1,5 @@
 .header {
+  z-index: 99;
   user-select: none;
   width: 100%;
   position: fixed;
@@ -14,9 +15,17 @@
 
 .header > nav > ul > li > a,
 .navHamburger > ul > li > a {
+  display: inline-block;
+  cursor: pointer;
   font-size: clamp(1.5rem, 3vw, 2rem);
   color: white;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.header > nav > ul > li > a:hover,
+.navHamburger > ul > li > a:hover {
+  transform: scale(0.95);
 }
 
 .header > h1 {
@@ -33,7 +42,7 @@
 .header > nav > ul {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .header > h1 > span {
@@ -67,6 +76,9 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+.logo {
+  width: 3.5rem;
 }
 
 @media only screen and (min-width: 768px) {

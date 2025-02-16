@@ -16,77 +16,79 @@ interface ServicesProps {
 
 function Services({ servicesRef }: ServicesProps) {
   return (
-    <section className={styles.services} ref={servicesRef}>
-      <h2>NOSSOS SERVIÇOS</h2>
-      <ul className={styles.servicesList}>
-        <li>
-          <ServiceCard
-            src="./src/assets/icone-motor.png"
-            content="Motor"
-          ></ServiceCard>
-        </li>
-        <li>
-          <ServiceCard
-            src="./src/assets/icone-injecao.png"
-            content="Injeção"
-          ></ServiceCard>
-        </li>
-        <li>
-          <ServiceCard
-            src="./src/assets/icone-troca-oleo.png"
-            content="Troca de Óleo"
-          ></ServiceCard>
-        </li>
-        <li>
-          <ServiceCard
-            src="./src/assets/icone-suspensao.png"
-            content="Suspensão"
-          ></ServiceCard>
-        </li>
-        <li>
-          <ServiceCard
-            src="./src/assets/icone-freio.png"
-            content="Freios"
-          ></ServiceCard>
-        </li>
-      </ul>
-      <div className={styles.swiper}>
-        {
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={1}
-            navigation
-            loop={true}
-            pagination={{
-              clickable: true,
-              type: "bullets",
-              el: ".swiper-paginationn",
-            }}
-            style={{ width: "100%", height: "100%" }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
-          >
-            {reviews.map((review) => {
-              return (
-                <SwiperSlide>
-                  <div className={styles.slide}>
-                    <ReviewCard
-                      key={review.name}
-                      avatarUrl={review.avatarUrl}
-                      name={review.name}
-                      content={review.content}
-                    />
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        }
-        <div
-          className="swiper-paginationn"
-          style={{ paddingTop: "0.5rem", textAlign: "center" }}
-        ></div>
+    <section className={styles.section} ref={servicesRef}>
+      <h2 className={styles.sectionTitle}>NOSSOS SERVIÇOS</h2>
+      <div className={styles.content}>
+        <ul className={styles.servicesList}>
+          <li>
+            <ServiceCard
+              src="./src/assets/icone-motor.png"
+              content="Motor"
+            ></ServiceCard>
+          </li>
+          <li>
+            <ServiceCard
+              src="./src/assets/icone-injecao.png"
+              content="Injeção"
+            ></ServiceCard>
+          </li>
+          <li>
+            <ServiceCard
+              src="./src/assets/icone-troca-oleo.png"
+              content="Troca de Óleo"
+            ></ServiceCard>
+          </li>
+          <li>
+            <ServiceCard
+              src="./src/assets/icone-suspensao.png"
+              content="Suspensão"
+            ></ServiceCard>
+          </li>
+          <li>
+            <ServiceCard
+              src="./src/assets/icone-freio.png"
+              content="Freios"
+            ></ServiceCard>
+          </li>
+        </ul>
+        <div className={styles.swiper}>
+          {
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={50}
+              slidesPerView={1}
+              navigation
+              loop={true}
+              pagination={{
+                clickable: true,
+                type: "bullets",
+                el: ".swiper-paginationn",
+              }}
+              style={{ width: "100%", height: "100%" }}
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log("slide change")}
+            >
+              {reviews.map((review) => {
+                return (
+                  <SwiperSlide>
+                    <div className={styles.slide}>
+                      <ReviewCard
+                        key={review.name}
+                        avatarUrl={review.avatarUrl}
+                        name={review.name}
+                        content={review.content}
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          }
+          <div
+            className="swiper-paginationn"
+            style={{ paddingTop: "0.5rem", textAlign: "center" }}
+          ></div>
+        </div>{" "}
       </div>
     </section>
   );

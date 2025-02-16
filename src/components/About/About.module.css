@@ -1,21 +1,22 @@
-.about {
+.section {
   user-select: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 50vh;
-  padding: 10rem 1rem 10rem 1rem;
+  overflow: hidden;
+  padding: 10rem 1rem 0 1rem;
 }
 
-section > h2 {
+.sectionTitle {
+  text-align: center;
   color: black;
   font-weight: 900;
+  margin-bottom: 5rem;
   font-size: clamp(2rem, 5vw, 3rem);
 }
 .content {
-  margin-top: 5rem;
-
   gap: 3rem;
   display: flex;
   flex-direction: column;
@@ -26,11 +27,11 @@ section > h2 {
   max-width: 25rem;
   text-align: center;
   color: black;
-  font-size: clamp(2rem, 5vw, 2rem);
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 .image {
-  width: clamp(15rem, 50vw, 20rem);
+  width: clamp(10rem, 50vw, 20rem);
   border-radius: 10px;
 }
 
@@ -38,9 +39,7 @@ section > h2 {
   .content {
     flex-direction: row;
   }
-  .image {
-    width: clamp(15rem, 50vw, 25rem);
-  }
+
   .text {
     max-width: 25rem;
     text-align: start;

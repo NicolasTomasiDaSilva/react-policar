@@ -6,8 +6,8 @@ interface AboutProps {
 
 function About({ aboutRef }: AboutProps) {
   return (
-    <section className={styles.about} ref={aboutRef}>
-      <h2>SOBRE NÓS</h2>
+    <section className={styles.section} ref={aboutRef}>
+      <h2 className={styles.sectionTitle}>SOBRE NÓS</h2>
       <div className={styles.content}>
         <img
           className={styles.image}

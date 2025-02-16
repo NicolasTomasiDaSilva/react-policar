@@ -1,6 +1,5 @@
 .reviewCard {
-  max-width: 20rem;
-  height: 2rem;
+  width: 80%;
   height: max-content;
   border-radius: 10px;
   background-color: rgb(221, 221, 221);

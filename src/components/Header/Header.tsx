@@ -3,26 +3,33 @@ import Hamburger from "hamburger-react";
 
 import React, { useState, useEffect } from "react";
 
+interface section {
+  title: string;
+  ref: React.RefObject<HTMLDivElement | null>;
+}
+
+type sections = {
+  [key: string]: section;
+};
+
 interface HeaderProps {
   scrolled: boolean;
-  homeRef: React.RefObject<HTMLDivElement | null>;
-  aboutRef: React.RefObject<HTMLDivElement | null>;
-  servicesRef: React.RefObject<HTMLDivElement | null>;
+
+  sections: sections;
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
 }
 
 function Header({
   scrolled,
-  homeRef,
-  aboutRef,
-  servicesRef,
+
   scrollToSection,
+  sections,
 }: HeaderProps) {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
     <header className={styles.header + " " + (scrolled ? styles.scrolled : "")}>
-      <h1>Policar</h1>
+      <img className={styles.logo} src="./src/assets/logo.png" alt="Policar" />
       <div className={styles.hamburger}>
         <Hamburger size={25} color="white" toggled={open} toggle={setOpen} />
         {
@@ -30,36 +37,19 @@ function Header({
             className={`${styles.navHamburger} ${open ? styles.active : ""}`}
           >
             <ul>
-              <li>
-                <a
-                  onClick={() => {
-                    setOpen(false);
-                    scrollToSection(homeRef as any);
-                  }}
-                >
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={() => {
-                    setOpen(false);
-                    scrollToSection(aboutRef as any);
-                  }}
-                >
-                  Sobre
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={() => {
-                    setOpen(false);
-                    scrollToSection(servicesRef as any);
-                  }}
-                >
-                  Services
-                </a>
-              </li>
+              {Object.entries(sections).map(([key, value]) => (
+                <li>
+                  <a
+                    key={key}
+                    onClick={() => {
+                      setOpen(false);
+                      scrollToSection(value.ref as any);
+                    }}
+                  >
+                    {value.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
         }
@@ -67,15 +57,13 @@ function Header({
 
       <nav className={styles.nav}>
         <ul>
-          <li>
-            <a onClick={() => scrollToSection(homeRef as any)}>Inicio</a>
-          </li>
-          <li>
-            <a onClick={() => scrollToSection(aboutRef as any)}>Sobre</a>
-          </li>
-          <li>
-            <a onClick={() => scrollToSection(servicesRef as any)}>Services</a>
-          </li>
+          {Object.entries(sections).map(([key, value]) => (
+            <li>
+              <a key={key} onClick={() => scrollToSection(value.ref as any)}>
+                {value.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
