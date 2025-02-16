@@ -21,34 +21,28 @@ function Services({ servicesRef }: ServicesProps) {
       <div className={styles.content}>
         <ul className={styles.servicesList}>
           <li>
-            <ServiceCard
-              src="./src/assets/icone-motor.png"
-              content="Motor"
-            ></ServiceCard>
+            <ServiceCard src="./icone-motor.png" content="Motor"></ServiceCard>
           </li>
           <li>
             <ServiceCard
-              src="./src/assets/icone-injecao.png"
+              src="./icone-injecao.png"
               content="Injeção"
             ></ServiceCard>
           </li>
           <li>
             <ServiceCard
-              src="./src/assets/icone-troca-oleo.png"
+              src="./icone-troca-oleo.png"
               content="Troca de Óleo"
             ></ServiceCard>
           </li>
           <li>
             <ServiceCard
-              src="./src/assets/icone-suspensao.png"
+              src="./icone-suspensao.png"
               content="Suspensão"
             ></ServiceCard>
           </li>
           <li>
-            <ServiceCard
-              src="./src/assets/icone-freio.png"
-              content="Freios"
-            ></ServiceCard>
+            <ServiceCard src="./icone-freio.png" content="Freios"></ServiceCard>
           </li>
         </ul>
         <div className={styles.swiper}>

@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 import Hamburger from "hamburger-react";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 interface section {
   title: string;
@@ -31,7 +31,7 @@ function Header({
     <header className={styles.header + " " + (scrolled ? styles.scrolled : "")}>
       <img
         className={styles.logo}
-        src="./src/assets/logo.png"
+        src="./logo.png"
         alt="Policar"
         draggable="false"
       />

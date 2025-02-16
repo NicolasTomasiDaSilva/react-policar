@@ -11,7 +11,7 @@ function ReviewCard({ avatarUrl, name, content }: ReviewCardProps) {
   const [imageSrc, setImageSrc] = useState(avatarUrl);
 
   const handleError = () => {
-    setImageSrc("./src/assets/avatar.jpg");
+    setImageSrc("./avatar.jpg");
   };
   return (
     <div className={styles.reviewCard}>

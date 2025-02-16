@@ -9,11 +9,7 @@ function About({ aboutRef }: AboutProps) {
     <section className={styles.section} ref={aboutRef}>
       <h2 className={styles.sectionTitle}>SOBRE NÓS</h2>
       <div className={styles.content}>
-        <img
-          className={styles.image}
-          src="./src/assets/policar.png"
-          alt="Policar"
-        />
+        <img className={styles.image} src="./policar.png" alt="Policar" />
         <p className={styles.text}>
           Desde 2002, a Policar oferece serviços automotivos com qualidade e
           honestidade. Com duas décadas de experiência, estamos comprometidos em
